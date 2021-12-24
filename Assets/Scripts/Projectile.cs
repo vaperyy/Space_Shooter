@@ -19,7 +19,6 @@ public class Projectile : MonoBehaviour
     // objects as well as check the trigger
     {
         // MonoBehavior automatically assigns gameObject to each class. 
-        Destroy(other.gameObject);
         Destroy(this.gameObject);
     }
 }
