@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// mainly spawns enemy planes
+/*
+Spawns enemy planes during each wave. Also displays "Wave #x" between each wave. 
+
+*/
+
 public class Enemies : MonoBehaviour
 {
-
     public Text waveWarning;
-    public string waveWarn;  // for more convenience in altering the message later.
-    
-    // any public variable can be edited in UNITY 
-    
+    public string waveWarn;  // for convenience in altering the message in Inspector
     public GameObject enemyPlane;  // change this to a class?
     public Vector3 spawnValues;
     public int enemyCount;
@@ -20,19 +20,27 @@ public class Enemies : MonoBehaviour
     public float waveWait;
     void Start()
     {
-        waveWarning.enabled = false;
         StartCoroutine(SpawnWaves());
     }
     IEnumerator SpawnWaves() 
-    // instantiate enemy planes
+    /*
+    Instantiates enemy planes in a predictable, boring way. 
+    */
+
     {
         yield return new WaitForSeconds(startWait);
 
-        int j = 0;
-
-        // for loop allows spawning multiple planes
+        int j = 0;  // iterator for displaying "Wave #x"
+        
         while(true)
+        // for loop allows spawning multiple planes
         {
+            j++;
+            waveWarn = "Wave " + j;
+            StartCoroutine(Warning());
+
+            yield return new WaitForSeconds(waveWait);
+            // returning an instance of the wait for seconds class, which delays the proceeding code
 
             for (int i = 0; i < enemyCount; i++)
             {
@@ -42,23 +50,29 @@ public class Enemies : MonoBehaviour
                 Quaternion spawnRotation = Quaternion.identity; // no rotation
                 GameObject ep = Instantiate(enemyPlane, spawnPosition, spawnRotation);
 
-                
-
                 yield return new WaitForSeconds(spawnWait); // wait between each plane
             }
             spawnWait -= 0.1f;  // planes get progressively tighter packed each wave
             waveWait -= 0.1f;  // time between waves progressively decreases
 
-            j++;
-            waveWarn = "Wave " + j;
-            
-            yield return new WaitForSeconds(waveWait);
+        }
+    }
 
-            waveWarning.text = waveWarn;
+    IEnumerator Warning()
+    /*
+    Displays a blinking text message, "Wave #x".
+    The advantage of containing it in a method 
+    is that it doesn't interfere with the custom spawnWait time we set
+    */
+    {
+        waveWarning.text = waveWarn;
+
+        for (int k = 0; k < 3; k++)
+        {
+            yield return new WaitForSeconds(0.3f);
             waveWarning.enabled = true;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.3f);
             waveWarning.enabled = false;
-
         }
     }
 
