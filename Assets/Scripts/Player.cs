@@ -4,26 +4,21 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Projectile laserPrefab;
-    public float speed = 5.0f;
+    public float moveSpeed = 5.0f;
+    public Rigidbody2D rb;  // adding a Rigidbody assigns physics properties to the sprite
+    private Vector2 moveInput;
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            this.transform.position += Vector3.left * this.speed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            this.transform.position += Vector3.right * this.speed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            this.transform.position += Vector3.up * this.speed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-        {
-            this.transform.position += Vector3.down * this.speed * Time.deltaTime;
-        }
+        moveInput.x = Input.GetAxisRaw("Horizontal");  // returns the value 
+        // of the virtual axis identified by the Horizontal axis.
+        moveInput.y = Input.GetAxisRaw("Vertical");  // GetAxis is more sensitive
+
+        moveInput.Normalize();  // makes a vector have a magnitude of 1
+        // ensures uniform speed
+
+        rb.velocity = moveInput * moveSpeed;  // the player should travel like this
+        // v2 * moveSpeed = v3, rb.velocity is a vector3
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
