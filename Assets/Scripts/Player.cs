@@ -2,6 +2,10 @@ using UnityEngine;
 
 // controls player plane, such as moving and shooting
 public class Player : MonoBehaviour
+/*
+https://www.youtube.com/watch?v=tFblCEFQoTs
+
+*/
 {
     public Projectile laserPrefab;
     public float moveSpeed = 5.0f;
