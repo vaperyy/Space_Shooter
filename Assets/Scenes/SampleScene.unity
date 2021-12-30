@@ -151,8 +151,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 220777881}
-  - {fileID: 1692654718}
   - {fileID: 303727111}
+  - {fileID: 1692654718}
   - {fileID: 811735770}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7622c1cf194d234f94806dfb459e6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpeed: -3
 --- !u!1 &303727110
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +283,7 @@ Transform:
   m_LocalScale: {x: 1.6505927, y: 1.6505927, z: 1.6505927}
   m_Children: []
   m_Father: {fileID: 51498118}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &303727112
 MonoBehaviour:
@@ -296,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7622c1cf194d234f94806dfb459e6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpeed: -3
 --- !u!212 &303727113
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -655,6 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7622c1cf194d234f94806dfb459e6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpeed: -2.5
 --- !u!212 &811735772
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1015,7 +1018,7 @@ Transform:
   m_LocalScale: {x: 1.6505927, y: 1.6505927, z: 1.6505927}
   m_Children: []
   m_Father: {fileID: 51498118}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &1692654719
 MonoBehaviour:
@@ -1029,6 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7622c1cf194d234f94806dfb459e6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpeed: -2.5
 --- !u!1001 &7160802343601262862
 PrefabInstance:
   m_ObjectHideFlags: 0
