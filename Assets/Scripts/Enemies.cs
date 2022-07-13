@@ -9,7 +9,14 @@ Spawns enemy planes during each wave. Also displays "Wave #x" between each wave.
 */
 
 public class Enemies : MonoBehaviour
+
+
 {
+
+    public Enemy2 SimpleEnemy;
+
+
+
     public Text waveWarning;
     public string waveWarn;  // for convenience in altering the message in Inspector
     public GameObject enemyPlane;  // change this to a class?
@@ -50,6 +57,21 @@ public class Enemies : MonoBehaviour
                 Quaternion spawnRotation = Quaternion.identity; // no rotation
                 GameObject ep = Instantiate(enemyPlane, spawnPosition, spawnRotation);
 
+
+
+                
+                // ------NEW-------
+                yield return new WaitForSeconds(3.5f);
+                StartCoroutine(SpawnSimple(SimpleEnemy, 0.2f, 10));
+                yield return new WaitForSeconds(2.5f);
+                StartCoroutine(SpawnSimple(SimpleEnemy, 0.2f, 10));
+                yield return new WaitForSeconds(0.1f);
+                yield return StartSequence();
+                yield return StartSequence();
+
+
+
+
                 yield return new WaitForSeconds(spawnWait); // wait between each plane
             }
             spawnWait -= 0.1f;  // planes get progressively tighter packed each wave
@@ -76,4 +98,28 @@ public class Enemies : MonoBehaviour
         }
     }
 
+
+
+    public IEnumerator SpawnSimple(Enemy2 enemy, float wait, int amount)
+    {
+        for (int t = 0; t < amount; t++)
+        {
+            yield return new WaitForSeconds(wait);
+            Enemy2 anEnemy = Instantiate(enemy);
+        }
+    }
+
+
+
+    
+    public IEnumerator StartSequence()
+    {
+        yield return new WaitForSeconds(4.0f);
+        StartCoroutine(SpawnSimple(SimpleEnemy, 0.2f, 10));
+        yield return new WaitForSeconds(0.1f);
+
+    }
+
 }
+
+
