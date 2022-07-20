@@ -440,6 +440,7 @@ GameObject:
   - component: {fileID: 501625251}
   - component: {fileID: 501625250}
   - component: {fileID: 501625249}
+  - component: {fileID: 501625253}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -529,6 +530,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &501625253
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501625248}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c5ac91274f0b7a4b8075dd166e3c776, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +851,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SimpleEnemy: {fileID: 5118643015708529679, guid: 846da892d1ea6b947972fe166658587e, type: 3}
+  SimpleEnemyOpposite: {fileID: 5118643015708529679, guid: 846da892d1ea6b947972fe166658587e, type: 3}
+  ShooterEnemyLeft: {fileID: 5118643015708529679, guid: 846da892d1ea6b947972fe166658587e, type: 3}
+  ShooterEnemyRight: {fileID: 5118643015708529679, guid: 846da892d1ea6b947972fe166658587e, type: 3}
+  ShooterSideScroller: {fileID: 5118643015708529679, guid: 846da892d1ea6b947972fe166658587e, type: 3}
   waveWarning: {fileID: 707061247}
   waveWarn: Wave #x
   enemyPlane: {fileID: 3224848410037748216, guid: 8531ef25a85b50e4b96778917e6febc5, type: 3}
@@ -1399,6 +1423,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5927262601099647780, guid: 846da892d1ea6b947972fe166658587e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 509d22bee53509047a7751cfcaeeae5a, type: 2}
     - target: {fileID: 6620430781445748276, guid: 846da892d1ea6b947972fe166658587e, type: 3}
       propertyPath: m_Name
       value: Enemy Plane 2
@@ -1409,11 +1437,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6620430781445748277, guid: 846da892d1ea6b947972fe166658587e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6955357
+      value: 2.22
       objectReference: {fileID: 0}
     - target: {fileID: 6620430781445748277, guid: 846da892d1ea6b947972fe166658587e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.108115196
+      value: 4.35
       objectReference: {fileID: 0}
     - target: {fileID: 6620430781445748277, guid: 846da892d1ea6b947972fe166658587e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1421,19 +1449,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6620430781445748277, guid: 846da892d1ea6b947972fe166658587e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6620430781445748277, guid: 846da892d1ea6b947972fe166658587e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6620430781445748277, guid: 846da892d1ea6b947972fe166658587e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6620430781445748277, guid: 846da892d1ea6b947972fe166658587e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6620430781445748277, guid: 846da892d1ea6b947972fe166658587e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1445,7 +1473,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6620430781445748277, guid: 846da892d1ea6b947972fe166658587e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620430781445748278, guid: 846da892d1ea6b947972fe166658587e, type: 3}
+      propertyPath: m_FlipY
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 846da892d1ea6b947972fe166658587e, type: 3}

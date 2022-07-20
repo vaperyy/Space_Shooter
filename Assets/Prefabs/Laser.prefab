@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5530142678698162584}
   - component: {fileID: 3924961459104740649}
   - component: {fileID: 5362547933353219612}
+  - component: {fileID: 959785512740222958}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -97,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3218ca6a8ece471489e81ca76ea99817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
   direction: {x: 0, y: 1, z: 0}
   speed: 30
 --- !u!50 &3924961459104740649
@@ -146,3 +148,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.06}
   m_EdgeRadius: 0
+--- !u!95 &959785512740222958
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748597543583600792}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 509d22bee53509047a7751cfcaeeae5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

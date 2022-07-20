@@ -14,6 +14,10 @@ public class Enemies : MonoBehaviour
 {
 
     public Enemy2 SimpleEnemy;
+    public Enemy2 SimpleEnemyOpposite;
+    public Enemy2 ShooterEnemyLeft;
+    public Enemy2 ShooterEnemyRight;
+    public Enemy2 ShooterSideScroller;
 
 
 
@@ -29,7 +33,7 @@ public class Enemies : MonoBehaviour
     {
         StartCoroutine(SpawnWaves());
     }
-    IEnumerator SpawnWaves() 
+    public IEnumerator SpawnWaves() 
     /*
     Instantiates enemy planes in a predictable, boring way. 
     */
@@ -58,22 +62,11 @@ public class Enemies : MonoBehaviour
                 GameObject ep = Instantiate(enemyPlane, spawnPosition, spawnRotation);
 
 
-
-                
-                // ------NEW-------
-                yield return new WaitForSeconds(3.5f);
-                StartCoroutine(SpawnSimple(SimpleEnemy, 0.2f, 10));
-                yield return new WaitForSeconds(2.5f);
-                StartCoroutine(SpawnSimple(SimpleEnemy, 0.2f, 10));
-                yield return new WaitForSeconds(0.1f);
-                yield return StartSequence();
-                yield return StartSequence();
-
-
-
-
                 yield return new WaitForSeconds(spawnWait); // wait between each plane
             }
+
+            yield return StartSequence();
+
             spawnWait -= 0.1f;  // planes get progressively tighter packed each wave
             waveWait -= 0.1f;  // time between waves progressively decreases
 
@@ -109,14 +102,19 @@ public class Enemies : MonoBehaviour
         }
     }
 
-
-
     
     public IEnumerator StartSequence()
     {
         yield return new WaitForSeconds(4.0f);
         StartCoroutine(SpawnSimple(SimpleEnemy, 0.2f, 10));
         yield return new WaitForSeconds(0.1f);
+        StartCoroutine(SpawnSimple(SimpleEnemyOpposite, 0.2f, 10));
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(SpawnSimple(ShooterEnemyLeft, 0.2f, 1));
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(SpawnSimple(ShooterEnemyRight, 0.2f, 1));
+        StartCoroutine(SpawnSimple(ShooterSideScroller, 0.2f, 10));
+        yield return new WaitForSeconds(4.0f);
 
     }
 

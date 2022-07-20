@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6620430781445748273}
   - component: {fileID: 6620430781445748272}
   - component: {fileID: 5118643015708529679}
+  - component: {fileID: -5927262601099647780}
   m_Layer: 0
   m_Name: Enemy Plane 2
   m_TagString: Untagged
@@ -164,3 +165,22 @@ MonoBehaviour:
   IsDead: 0
   ScoreValue: 10
   Weapons: []
+--- !u!95 &-5927262601099647780
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620430781445748276}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4eaa57b31474cf94e8351b6c9052e142, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
