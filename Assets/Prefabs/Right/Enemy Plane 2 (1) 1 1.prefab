@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9201498101466324511}
   - component: {fileID: 7159357601143143456}
   - component: {fileID: 714969998430899443}
+  - component: {fileID: -1274852776517256280}
   m_Layer: 0
   m_Name: Enemy Plane 2 (1) 1 1
   m_TagString: Untagged
@@ -184,3 +185,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &-1274852776517256280
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201498101466324507}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d27bdb65cdf0cbb4dbd4c3a94fc2e0f4, type: 2}
+  m_Animations:
+  - {fileID: 0}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

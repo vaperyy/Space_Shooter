@@ -16,4 +16,14 @@ public class Enemy2 : Entity
             weapon.Fire();
         }
     }
+
+    public void Live()
+    {
+
+    }
+
+    public void Disappear()
+    {
+        
+    }
 }
