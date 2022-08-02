@@ -43,8 +43,8 @@ public class Projectile : MonoBehaviour
     NOTE: OnTriggerEnter2D only works once you implement a box collider for objects involved, 
     as well as check the checkbox for trigger
     */
-
-        
+    
+    
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane")) // returns the layer index to see if it matches the gameObject's layer index
         // if the other gameObject's layer is an EnemyPlane, which identifies it as an enemy plane, 
@@ -59,7 +59,6 @@ public class Projectile : MonoBehaviour
         }
         Destroy(this.gameObject);
         // MonoBehavior automatically assigns gameObject to each class.
-
 
 
     }

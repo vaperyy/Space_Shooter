@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5286869273048232752}
   - component: {fileID: 6176642479622869263}
   - component: {fileID: 3179149799648091351}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy Plane Side
   m_TagString: Untagged
   m_Icon: {fileID: 0}

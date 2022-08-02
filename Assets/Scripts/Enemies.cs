@@ -6,6 +6,7 @@ using UnityEngine.UI;
 /*
 Spawns enemy planes during each wave. Also displays "Wave #x" between each wave. 
 
+some code borrowed from Poncho
 */
 
 public class Enemies : MonoBehaviour
@@ -115,7 +116,20 @@ public class Enemies : MonoBehaviour
         StartCoroutine(SpawnSimple(ShooterEnemyRight, 0.2f, 1));
         StartCoroutine(SpawnSimple(ShooterSideScroller, 0.2f, 10));
         yield return new WaitForSeconds(4.0f);
-
+        StartCoroutine(SpawnSimple(SimpleEnemy, 0.2f, 10));
+        yield return new WaitForSeconds(0.1f);
+        StartCoroutine(SpawnSimple(SimpleEnemyOpposite, 0.2f, 10));
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(SpawnSimple(ShooterEnemyLeft, 0.2f, 1));
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(SpawnSimple(ShooterEnemyRight, 0.2f, 1));
+        yield return new WaitForSeconds(4.5f);
+        StartCoroutine(SpawnSimple(SimpleEnemy, 0.2f, 10));
+        StartCoroutine(SpawnSimple(ShooterEnemyLeft, 0.2f, 1));
+        yield return new WaitForSeconds(2.5f);
+        StartCoroutine(SpawnSimple(SimpleEnemyOpposite, 0.2f, 10));
+        StartCoroutine(SpawnSimple(ShooterEnemyRight, 0.2f, 1));
+        StartCoroutine(SpawnSimple(ShooterSideScroller, 0.4f, 3));
     }
 
 
