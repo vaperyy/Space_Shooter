@@ -40,7 +40,7 @@ public class Enemies : MonoBehaviour
     */
 
     {
-        yield return new WaitForSeconds(startWait);
+        // yield return new WaitForSeconds(startWait);
 
         int j = 0;  // iterator for displaying "Wave #x"
         
@@ -62,12 +62,10 @@ public class Enemies : MonoBehaviour
                 Quaternion spawnRotation = Quaternion.identity; // no rotation
                 GameObject ep = Instantiate(enemyPlane, spawnPosition, spawnRotation);
 
-
                 yield return new WaitForSeconds(spawnWait); // wait between each plane
             }
 
             yield return StartSequence();
-
             spawnWait -= 0.1f;  // planes get progressively tighter packed each wave
             waveWait -= 0.1f;  // time between waves progressively decreases
 
@@ -105,8 +103,11 @@ public class Enemies : MonoBehaviour
 
     
     public IEnumerator StartSequence()
+    /* 
+    Instantiates planes in a more interesting way.
+    */
     {
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(1.0f);
         StartCoroutine(SpawnSimple(SimpleEnemy, 0.2f, 10));
         yield return new WaitForSeconds(0.1f);
         StartCoroutine(SpawnSimple(SimpleEnemyOpposite, 0.2f, 10));
