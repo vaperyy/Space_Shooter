@@ -7,13 +7,6 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
 
 */
 {
-
-    public GameOverScreen GameOverScreen;  // game over screen from that class
-    int maxPlatform = 0;  // also new
-
-
-
-
     public Projectile laserPrefab;
     public float moveSpeed = 5.0f;
     public Rigidbody2D rb;  // adding a Rigidbody assigns physics properties to the sprite
@@ -47,8 +40,8 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
     }
 
 
-
     void OnTriggerEnter2D(Collider2D other)
+
     /* 
     Just like in projectile except for the shooter and an enemy plane
 
@@ -59,10 +52,9 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane")) 
         {
-            // GameOverScreen.Setup(maxPlatform);
-            // Destroy(other.gameObject);
+            Destroy(other.gameObject);
         }
-        // Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
     
 }
