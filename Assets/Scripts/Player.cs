@@ -53,8 +53,9 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
         if (other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane")) 
         {
             Destroy(other.gameObject);
+            Destroy(this.gameObject);
         }
-        Destroy(this.gameObject);
+        
     }
     
 }
