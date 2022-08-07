@@ -16,6 +16,10 @@ public class Boundary : MonoBehaviour
     it will destroy it.
     */
     {
-        Destroy(other.gameObject);
+        if (other.gameObject.layer != LayerMask.NameToLayer("Shooter"))
+        {
+            Destroy(other.gameObject);
+        }
+        
     }
 }
