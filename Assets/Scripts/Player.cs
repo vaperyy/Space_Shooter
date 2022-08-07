@@ -7,6 +7,15 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
 
 */
 {
+
+
+    public GameOverScreen GameOverScreen;
+    int maxPlatform = 0;
+
+
+
+
+
     public Projectile laserPrefab;
     public float moveSpeed = 5.0f;
     public Rigidbody2D rb;  // adding a Rigidbody assigns physics properties to the sprite
@@ -52,8 +61,7 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
     {
         if ((other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane")) && (this.gameObject.layer == LayerMask.NameToLayer("Shooter")))
         {
-            Destroy(other.gameObject);
-            Destroy(this.gameObject);
+            GameOverScreen.Setup(maxPlatform);
         }
         
     }

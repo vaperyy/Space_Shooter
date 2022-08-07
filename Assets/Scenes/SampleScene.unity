@@ -1725,6 +1725,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.01, y: 2.01}
   m_EdgeRadius: 0
+--- !u!114 &1521504312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521504305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc79944753c86c4683c7e4cde76f6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsText: {fileID: 250289096}
 --- !u!1 &1537970635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,7 +2051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc79944753c86c4683c7e4cde76f6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsText: {fileID: 0}
+  pointsText: {fileID: 250289096}
 --- !u!1 &1692654716
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,5 +2277,9 @@ PrefabInstance:
       propertyPath: laserPrefab
       value: 
       objectReference: {fileID: 753141874}
+    - target: {fileID: 7160802342999716469, guid: c7fc3e89cb9f7b4478e1d7f17919733a, type: 3}
+      propertyPath: GameOverScreen
+      value: 
+      objectReference: {fileID: 1647692304}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7fc3e89cb9f7b4478e1d7f17919733a, type: 3}
