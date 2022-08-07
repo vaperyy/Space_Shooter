@@ -10,9 +10,21 @@ Controls player plane, such as moving and shooting
 https://www.youtube.com/watch?v=tFblCEFQoTs
 */
 {
+<<<<<<< HEAD
     private float timer;
     private int score;
     public Text scoreText;
+=======
+
+
+    public GameOverScreen GameOverScreen;
+    int maxPlatform = 0;
+
+
+
+
+
+>>>>>>> b5fedbb (Revert "Revert "what SHOULD be a game over screen"")
     public Projectile laserPrefab;
     public float moveSpeed = 5.0f;
     public Rigidbody2D rb;  // adding a Rigidbody assigns physics properties to the sprite
@@ -77,10 +89,14 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
         if ((other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane") || other.gameObject.layer == LayerMask.NameToLayer("EnemyLaser")) && 
         (this.gameObject.layer == LayerMask.NameToLayer("Shooter")))
         {
+<<<<<<< HEAD
             PlayerPrefs.SetString("currentScore", scoreText.text);
             SceneManager.LoadScene("Game Over");
             Destroy(other.gameObject);
             Destroy(this.gameObject);
+=======
+            GameOverScreen.Setup(maxPlatform);
+>>>>>>> b5fedbb (Revert "Revert "what SHOULD be a game over screen"")
         }
     }
 }

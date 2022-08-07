@@ -13,9 +13,12 @@ TagManager:
   - Background
   - Shooter
   - Laser
+<<<<<<< HEAD
   - EnemyLaser
   - 
   - 
+=======
+>>>>>>> b5fedbb (Revert "Revert "what SHOULD be a game over screen"")
   - 
   - 
   - 
