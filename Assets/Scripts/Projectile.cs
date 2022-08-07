@@ -46,7 +46,7 @@ public class Projectile : MonoBehaviour
     
     
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane")) // returns the layer index to see if it matches the gameObject's layer index
+        if ((other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane")) && (this.gameObject.layer == LayerMask.NameToLayer("Laser"))) // returns the layer index to see if it matches the gameObject's layer index
         // if the other gameObject's layer is an EnemyPlane, which identifies it as an enemy plane, 
         // then destroy it. This avoids destroying the boundary which the laser will come into contact with a lot.
         // so this requires setting the enemy plane prefab to an EnemyPlane layer.

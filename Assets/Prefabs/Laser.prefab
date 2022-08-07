@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3924961459104740649}
   - component: {fileID: 5362547933353219612}
   - component: {fileID: 959785512740222958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ Animator:
   m_GameObject: {fileID: 1748597543583600792}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 509d22bee53509047a7751cfcaeeae5a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

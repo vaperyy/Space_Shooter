@@ -50,7 +50,7 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
     */
     
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane")) 
+        if ((other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane")) && (this.gameObject.layer == LayerMask.NameToLayer("Shooter")))
         {
             Destroy(other.gameObject);
             Destroy(this.gameObject);
