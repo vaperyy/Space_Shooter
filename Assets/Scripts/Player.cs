@@ -79,6 +79,8 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
         {
             PlayerPrefs.SetString("currentScore", scoreText.text);
             SceneManager.LoadScene("Game Over");
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

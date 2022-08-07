@@ -15,4 +15,10 @@ Loads the Game Over Screen.
         currentScoreText = currentScore.GetComponent<Text>();  // get the score from the score GameObject
         currentScoreText.text = PlayerPrefs.GetString("currentScore");
     }
+    public Text pointsText;
+    public void Setup(int score) 
+    {
+        gameObject.SetActive(true);
+        pointsText.text = score.ToString() + " POINTS";
+    }
 }
