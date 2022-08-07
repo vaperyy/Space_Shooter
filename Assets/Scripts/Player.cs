@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // controls player plane, such as moving and shooting
 public class Player : MonoBehaviour
@@ -8,14 +9,8 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
 */
 {
 
-
-    public GameOverScreen GameOverScreen;
-    int maxPlatform = 0;
-
-
-
-
-
+    // public GameOverScreen GameOverScreen;
+    // int maxPlatform = 0;
     public Projectile laserPrefab;
     public float moveSpeed = 5.0f;
     public Rigidbody2D rb;  // adding a Rigidbody assigns physics properties to the sprite
@@ -48,7 +43,6 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
         Instantiate(this.laserPrefab, this.transform.position, Quaternion.identity);
     }
 
-
     void OnTriggerEnter2D(Collider2D other)
 
     /* 
@@ -61,9 +55,7 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
     {
         if ((other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane")) && (this.gameObject.layer == LayerMask.NameToLayer("Shooter")))
         {
-            GameOverScreen.Setup(maxPlatform);
+            SceneManager.LoadScene("Game Over");
         }
-        
     }
-    
 }
