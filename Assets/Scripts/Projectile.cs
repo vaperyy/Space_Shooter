@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
 
     public void Start()
     {
-
+        // DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update()
@@ -54,8 +54,11 @@ public class Projectile : MonoBehaviour
             Destroy(other.gameObject);
             score += 1;
             scoreText.text = "" + score;  // not just for the below code but also display in UI
+            DontDestroyOnLoad(this.gameObject);
             Destroy(this.gameObject);
         }
+        
+
         
         // MonoBehavior automatically assigns gameObject to each class.
 
