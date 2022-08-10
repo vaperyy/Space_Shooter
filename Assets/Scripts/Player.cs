@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // controls player plane, such as moving and shooting
 public class Player : MonoBehaviour
@@ -8,6 +9,8 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
 
 */
 {
+
+    public Text scoreText;
 
     // public GameOverScreen GameOverScreen;
     // int maxPlatform = 0;
@@ -40,7 +43,12 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
         // instantiate the projectile at the position and rotation of this transformation
         // this.transform.position locates the GameObject in 3d world space
         // Quaternion.identity represents no rotation needed, object is perfectly aligned with world axises
-        Instantiate(this.laserPrefab, this.transform.position, Quaternion.identity);
+
+
+        // Instantiate(this.laserPrefab, this.transform.position, Quaternion.identity);
+
+        Projectile instance = Instantiate(this.laserPrefab, this.transform.position, Quaternion.identity);
+        instance.scoreText = scoreText;
     }
 
     void OnTriggerEnter2D(Collider2D other)
