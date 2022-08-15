@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 // controls player plane, such as moving and shooting
 public class Player : MonoBehaviour
@@ -10,9 +11,13 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
 */
 {
 
+    private float timer;
+
+
     public int score;
 
     public Text scoreText;
+    public Text highscore;
 
     // public GameOverScreen GameOverScreen;
     // int maxPlatform = 0;
@@ -33,15 +38,26 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
         rb.velocity = moveInput * moveSpeed;  // the player should travel like this
         // v2 * moveSpeed = v3, rb.velocity is a vector3
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+
+        // pick between shooting automatically or manually (below)
+
+        timer += Time.deltaTime;
+        if(timer >= 0.2)
         {
             Shoot();
+            timer = 0;
         }
+
+        // if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        // {
+        //     Shoot();
+        // }
     }
 
-    private void Shoot()
+    void Shoot()
     // for instantiating the (Projectile-attached) laser prefab
     {
+
         // instantiate the projectile at the position and rotation of this transformation
         // this.transform.position locates the GameObject in 3d world space
         // Quaternion.identity represents no rotation needed, object is perfectly aligned with world axises
@@ -53,6 +69,7 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
 
         score++;
         scoreText.text = "" + score;  // not just for the below code but also display in UI
+
         
     }
 
