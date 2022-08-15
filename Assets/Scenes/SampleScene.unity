@@ -1994,7 +1994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc79944753c86c4683c7e4cde76f6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsText: {fileID: 250289096}
+  currentScore: {fileID: 0}
+  currentScoreText: {fileID: 0}
 --- !u!1 &1692654716
 GameObject:
   m_ObjectHideFlags: 0

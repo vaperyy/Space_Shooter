@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 // controls player plane, such as moving and shooting
 public class Player : MonoBehaviour
@@ -12,12 +13,9 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
 {
 
     private float timer;
-
-
-    public int score;
+    private int score;
 
     public Text scoreText;
-    public Text highscore;
 
     // public GameOverScreen GameOverScreen;
     // int maxPlatform = 0;
@@ -25,6 +23,11 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
     public float moveSpeed = 5.0f;
     public Rigidbody2D rb;  // adding a Rigidbody assigns physics properties to the sprite
     private Vector2 moveInput;
+
+    private void Start()
+    {
+        PlayerPrefs.SetString("currentScore", "0");
+    }
 
     private void Update()
     {
@@ -85,6 +88,8 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
     {
         if ((other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane")) && (this.gameObject.layer == LayerMask.NameToLayer("Shooter")))
         {
+            PlayerPrefs.SetString("currentScore", scoreText.text);
+            // Debug.Log("Score: " + scoreText.text);  // This works
             SceneManager.LoadScene("Game Over");
         }
     }

@@ -5,10 +5,13 @@ using UnityEngine.UI;  // you have to specifically import UI to use Text
 
 public class GameOverScreen : MonoBehaviour
 {
-    public Text pointsText;
-    public void Setup(int score) 
-    {
+
+    public GameObject currentScore;
+    private Text currentScoreText;
+
+    void Start() {
+        currentScoreText = currentScore.GetComponent<Text>();  // get the score from the score GameObject
         gameObject.SetActive(true);
-        pointsText.text = " 0 POINTS";
+        currentScoreText.text = PlayerPrefs.GetString("currentScore");
     }
 }
