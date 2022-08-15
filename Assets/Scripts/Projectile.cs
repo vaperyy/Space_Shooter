@@ -9,8 +9,9 @@ destroying enemy planes at the same time.
 
 public class Projectile : MonoBehaviour
 {
-    public Text scoreText;
-    static int score;
+    // public Text scoreText;
+    // static int score;
+    
     // With static, each projectile object no longer have their own score (instances). The class would have ownership 
     // of the score variable and do changes as necessary, and all projectile objects would now show the score. 
 
@@ -23,8 +24,14 @@ public class Projectile : MonoBehaviour
 
     public void Start()
     {
-        // DontDestroyOnLoad(this.gameObject);
+        // Reset();
     }
+
+    // public void Reset()
+    // {
+    //     score = 0;
+    //     scoreText.text = "" + score;
+    // }
 
     private void Update()
     // this transforms the laser, using a Vector3, so that it moves. 
@@ -44,7 +51,6 @@ public class Projectile : MonoBehaviour
     as well as check the checkbox for trigger
     */
     
-    
     {
         if ((other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane")) && (this.gameObject.layer == LayerMask.NameToLayer("Laser"))) // returns the layer index to see if it matches the gameObject's layer index
         // if the other gameObject's layer is an EnemyPlane, which identifies it as an enemy plane, 
@@ -52,10 +58,11 @@ public class Projectile : MonoBehaviour
         // so this requires setting the enemy plane prefab to an EnemyPlane layer.
         {
             Destroy(other.gameObject);
-            score += 1;
-            scoreText.text = "" + score;  // not just for the below code but also display in UI
+            // score++;
+            // scoreText.text = "" + score;  // not just for the below code but also display in UI
             // DontDestroyOnLoad(this.gameObject);
             Destroy(this.gameObject);
+            
         }
 
         

@@ -10,6 +10,8 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
 */
 {
 
+    public int score;
+
     public Text scoreText;
 
     // public GameOverScreen GameOverScreen;
@@ -44,11 +46,14 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
         // this.transform.position locates the GameObject in 3d world space
         // Quaternion.identity represents no rotation needed, object is perfectly aligned with world axises
 
-
         // Instantiate(this.laserPrefab, this.transform.position, Quaternion.identity);
 
         Projectile instance = Instantiate(this.laserPrefab, this.transform.position, Quaternion.identity);
-        instance.scoreText = scoreText;
+        // instance.scoreText = scoreText;
+
+        score++;
+        scoreText.text = "" + score;  // not just for the below code but also display in UI
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
