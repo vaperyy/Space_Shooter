@@ -2,8 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Entity
 {
-    public float speed;
+    public Weapon[] Weapons;
+    public void Fire()
+    {
+        if (Weapons.Length == 0) return;
+        foreach(Weapon weapon in Weapons)
+        {
+            weapon.Fire();
+        }
+    }
 
+    public void Live()
+    {
+
+    }
+
+    public void Disappear()
+    {
+        
+    }
 }

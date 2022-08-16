@@ -14,11 +14,11 @@ public class Enemies : MonoBehaviour
 
 {
 
-    public Enemy2 SimpleEnemy;
-    public Enemy2 SimpleEnemyOpposite;
-    public Enemy2 ShooterEnemyLeft;
-    public Enemy2 ShooterEnemyRight;
-    public Enemy2 ShooterSideScroller;
+    public Enemy SimpleEnemy;
+    public Enemy SimpleEnemyOpposite;
+    public Enemy ShooterEnemyLeft;
+    public Enemy ShooterEnemyRight;
+    public Enemy ShooterSideScroller;
 
 
 
@@ -92,12 +92,12 @@ public class Enemies : MonoBehaviour
 
 
 
-    public IEnumerator SpawnSimple(Enemy2 enemy, float wait, int amount)
+    public IEnumerator SpawnSimple(Enemy enemy, float wait, int amount)
     {
         for (int t = 0; t < amount; t++)
         {
             yield return new WaitForSeconds(wait);
-            Enemy2 anEnemy = Instantiate(enemy);
+            Enemy anEnemy = Instantiate(enemy);
         }
     }
 
