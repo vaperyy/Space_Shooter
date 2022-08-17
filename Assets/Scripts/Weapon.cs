@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public Projectile Projectile;
-    // public Entity Parent;
-    public float FireRate;
+    public EnemyProjectile EnemyProjectile;
+    public Entity Parent;
+    public float FireRate = 0;
     public float _cooldown;
     public AudioClip FireSound;
     public float FireVolume;
 
     public virtual void Fire()
     {
-        if (_cooldown > 0) return;
-        // Projectile newProjectile = Instantiate(Projectile, transform.position, Parent.transform.rotation);
-        // newProjectile.OwnedBy = Parent;
+        // if (_cooldown > 0) return;
+        EnemyProjectile newProjectile = Instantiate(EnemyProjectile, transform.position, Parent.transform.rotation);
+        newProjectile.OwnedBy = Parent;
         _cooldown = FireRate;
-        // StartCoroutine(DestroyOverSeconds(5.0f, newProjectile.gameObject));
+        StartCoroutine(DestroyOverSeconds(5.0f, newProjectile.gameObject));
         PlaySound();
     }
 
@@ -31,10 +31,10 @@ public class Weapon : MonoBehaviour
         StartCoroutine(DestroyOverSeconds(FireSound.length + 0.1f, newAC));
     }
 
-    private void Update()
-    {
-        _cooldown -= Time.deltaTime;
-    }
+    // private void Update()
+    // {
+    //     _cooldown -= Time.deltaTime;
+    // }
 
     public IEnumerator DestroyOverSeconds(float time, GameObject go)
     {

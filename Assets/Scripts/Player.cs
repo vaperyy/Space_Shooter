@@ -24,6 +24,15 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
     public Rigidbody2D rb;  // adding a Rigidbody assigns physics properties to the sprite
     private Vector2 moveInput;
 
+
+    public static Player main;
+
+
+    private void Awake()
+    {
+        main = this;
+    }
+
     private void Start()
     {
         PlayerPrefs.SetString("currentScore", "0");
@@ -73,7 +82,6 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
         score++;
         scoreText.text = "" + score;  // not just for the below code but also display in UI
 
-        
     }
 
     void OnTriggerEnter2D(Collider2D other)

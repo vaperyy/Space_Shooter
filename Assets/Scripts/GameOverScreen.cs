@@ -11,7 +11,7 @@ public class GameOverScreen : MonoBehaviour
 
     void Start() {
         currentScoreText = currentScore.GetComponent<Text>();  // get the score from the score GameObject
-        gameObject.SetActive(true);
+        // gameObject.SetActive(true);
         currentScoreText.text = PlayerPrefs.GetString("currentScore");
     }
 }

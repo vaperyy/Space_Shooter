@@ -183,4 +183,5 @@ MonoBehaviour:
   DeathVolume: 0
   IsDead: 0
   ScoreValue: 10
-  Weapons: []
+  Weapons:
+  - {fileID: 6732108856752555721, guid: a7de3b62dbb0cad4490dd7ec2d11647f, type: 3}

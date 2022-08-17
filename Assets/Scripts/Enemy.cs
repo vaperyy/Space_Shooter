@@ -5,6 +5,11 @@ using UnityEngine;
 public class Enemy : Entity
 {
     public Weapon[] Weapons;
+    public void Disappear()
+    {
+        Destroy(gameObject);
+    }
+
     public void Fire()
     {
         if (Weapons.Length == 0) return;
@@ -12,15 +17,5 @@ public class Enemy : Entity
         {
             weapon.Fire();
         }
-    }
-
-    public void Live()
-    {
-
-    }
-
-    public void Disappear()
-    {
-        
     }
 }
