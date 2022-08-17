@@ -94,7 +94,8 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
     */
     
     {
-        if ((other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane")) && (this.gameObject.layer == LayerMask.NameToLayer("Shooter")))
+        if ((other.gameObject.layer == LayerMask.NameToLayer("EnemyPlane") || other.gameObject.layer == LayerMask.NameToLayer("EnemyLaser")) && 
+        (this.gameObject.layer == LayerMask.NameToLayer("Shooter")))
         {
             PlayerPrefs.SetString("currentScore", scoreText.text);
             // Debug.Log("Score: " + scoreText.text);  // This works
