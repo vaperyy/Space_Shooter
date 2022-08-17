@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class StayInside : MonoBehaviour
 /*
+Ensures the shooter stays inside the game frame and doesn't infinitely wander off. 
 https://www.youtube.com/watch?v=CFf2woe4gdg
-
 */
 {
-    // Update is called once per frame
     void Update()
     {
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, -2.8f, 2.8f),

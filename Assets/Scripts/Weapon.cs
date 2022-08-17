@@ -20,7 +20,7 @@ Instantiate enemy bullets from red enemy planes.
         EnemyProjectile newProjectile = Instantiate(EnemyProjectile, transform.position, Parent.transform.rotation);
         newProjectile.OwnedBy = Parent;
         _cooldown = FireRate;
-        StartCoroutine(DestroyOverSeconds(5.0f, newProjectile.gameObject));
+        // StartCoroutine(DestroyOverSeconds(5.0f, newProjectile.gameObject));
         PlaySound();
     }
 
@@ -32,11 +32,5 @@ Instantiate enemy bullets from red enemy planes.
         audioSource.volume = FireVolume;
         audioSource.PlayOneShot(FireSound);
         // StartCoroutine(DestroyOverSeconds(FireSound.length + 0.1f, newAC));
-    }
-
-    public IEnumerator DestroyOverSeconds(float time, GameObject go)
-    {
-        yield return new WaitForSeconds(time);
-        Destroy(go);
     }
 }
