@@ -3,23 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
-The Boundary object which deletes all laser objects that leave the player's gameview
+The Boundary object which deletes all objects that touch it except for the main shooter plane (controlled by the player)
 to free space in the hierarchy.
-
 */
 
 public class Boundary : MonoBehaviour
 {
     void OnTriggerExit2D(Collider2D other)
-    /*
-    If the boundary collides with another object (only the laser for now),
-    it will destroy it.
-    */
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("Shooter"))
         {
             Destroy(other.gameObject);
         }
-        
     }
 }

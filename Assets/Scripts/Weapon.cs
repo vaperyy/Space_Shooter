@@ -28,7 +28,7 @@ public class Weapon : MonoBehaviour
         AudioSource audioSource = newAC.AddComponent<AudioSource>();
         audioSource.volume = FireVolume;
         audioSource.PlayOneShot(FireSound);
-        StartCoroutine(DestroyOverSeconds(FireSound.length + 0.1f, newAC));
+        // StartCoroutine(DestroyOverSeconds(FireSound.length + 0.1f, newAC));
     }
 
     // private void Update()

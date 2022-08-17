@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 5
-  DeathSound: {fileID: 0}
-  DeathVolume: 0
+  DeathSound: {fileID: 8300000, guid: 7b548007da39bb148b884a5e47ae8ea9, type: 3}
+  DeathVolume: 1
   IsDead: 0
   ScoreValue: 10
   Weapons:

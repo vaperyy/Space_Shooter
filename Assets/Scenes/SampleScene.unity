@@ -1484,6 +1484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1397169387}
+  musicStart: {fileID: 8300000, guid: 9dac344650e170a439148f2502199d76, type: 3}
 --- !u!82 &1397169387
 AudioSource:
   m_ObjectHideFlags: 0

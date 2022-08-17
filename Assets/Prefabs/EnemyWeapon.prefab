@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyProjectile: {fileID: 3164332279888715809, guid: 7c9f9d1e4180f704aa365ed56b96fb5c, type: 3}
-  Parent: {fileID: 8407935087546011232, guid: a5085318e9325ab468d2d7fd84d5a098, type: 3}
+  Parent: {fileID: -1884649970876317424, guid: 5a1c829a2fb3bc34c9324c6939132093, type: 3}
   FireRate: 0.1
-  _cooldown: 0
-  FireSound: {fileID: 0}
+  _cooldown: 0.1
+  FireSound: {fileID: 8300000, guid: 680ec4d5c011b58458ea8e3192f56b16, type: 3}
   FireVolume: 0.08

@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 /*
 Spawns enemy planes during each wave. Also displays "Wave #x" between each wave. 
-
+Two different types of enemy planes are spawned. One (yellow) type that travels straight.
+And one (red) type that travels diagonally and is animated.
 some code borrowed from Poncho
 */
 
@@ -13,7 +14,6 @@ public class Enemies : MonoBehaviour
 
 
 {
-
     public Enemy SimpleEnemy;
     public Enemy SimpleEnemyOpposite;
     public Enemy ShooterEnemyLeft;
@@ -21,31 +21,27 @@ public class Enemies : MonoBehaviour
     public Enemy ShooterSideScroller;
 
 
-
     public Text waveWarning;
-    public string waveWarn;  // for convenience in altering the message in Inspector
-    public GameObject enemyPlane;  // change this to a class?
+    public string waveWarn;
+    public GameObject enemyPlane;
     public Vector3 spawnValues;
     public int enemyCount;
     public float spawnWait; // time between each spawn
     public float startWait; // delayed time before start
     public float waveWait;
+
     void Start()
     {
         StartCoroutine(SpawnWaves());
     }
+
     public IEnumerator SpawnWaves() 
     /*
-    Instantiates enemy planes in a predictable, boring way. 
+    Instantiates yellow enemy planes that move straight
     */
-
     {
-        // yield return new WaitForSeconds(startWait);
-
         int j = 0;  // iterator for displaying "Wave #x"
-        
-        while(true)
-        // for loop allows spawning multiple planes
+        while(true)  // for loop allows spawning multiple planes
         {
             j++;
             waveWarn = "Wave " + j;
@@ -57,7 +53,7 @@ public class Enemies : MonoBehaviour
             for (int i = 0; i < enemyCount; i++)
             {
                 // spawnValues.y and spawnValues.z borrows values from Unity UI
-                // randomly spawn an x value. 
+                // spawns at a random x value
                 Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity; // no rotation
                 GameObject ep = Instantiate(enemyPlane, spawnPosition, spawnRotation);
@@ -68,7 +64,6 @@ public class Enemies : MonoBehaviour
             yield return StartSequence();
             spawnWait -= 0.1f;  // planes get progressively tighter packed each wave
             waveWait -= 0.1f;  // time between waves progressively decreases
-
         }
     }
 
@@ -90,8 +85,6 @@ public class Enemies : MonoBehaviour
         }
     }
 
-
-
     public IEnumerator SpawnSimple(Enemy enemy, float wait, int amount)
     {
         for (int t = 0; t < amount; t++)
@@ -100,11 +93,10 @@ public class Enemies : MonoBehaviour
             Enemy anEnemy = Instantiate(enemy);
         }
     }
-
     
     public IEnumerator StartSequence()
     /* 
-    Instantiates planes in a more interesting way.
+    Instantiates diagonal planes.
     */
     {
         yield return new WaitForSeconds(1.0f);
@@ -132,8 +124,4 @@ public class Enemies : MonoBehaviour
         StartCoroutine(SpawnSimple(ShooterEnemyRight, 0.2f, 1));
         StartCoroutine(SpawnSimple(ShooterSideScroller, 0.4f, 3));
     }
-
-
 }
-
-

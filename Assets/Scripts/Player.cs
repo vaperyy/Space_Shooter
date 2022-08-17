@@ -54,7 +54,7 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
         // pick between shooting automatically or manually (below)
 
         timer += Time.deltaTime;
-        if(timer >= 0.2)
+        if(timer >= 0.07)
         {
             Shoot();
             timer = 0;

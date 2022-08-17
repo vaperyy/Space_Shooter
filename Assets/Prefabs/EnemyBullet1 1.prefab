@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   Damage: 5
-  OwnedBy: {fileID: 0}
+  OwnedBy: {fileID: 8407935087546011232, guid: a5085318e9325ab468d2d7fd84d5a098, type: 3}
 --- !u!58 &-8238006944309164189
 CircleCollider2D:
   m_ObjectHideFlags: 0

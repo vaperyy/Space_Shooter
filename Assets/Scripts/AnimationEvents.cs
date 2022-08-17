@@ -3,19 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationEvents : MonoBehaviour
+/*
+Animation Events for Animated Enemy Planes that fly diagonally (Red)
+*/
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void EnemyBeginAttack()
     {
 

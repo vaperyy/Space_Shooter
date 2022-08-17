@@ -10,7 +10,6 @@ public class Entity : MonoBehaviour
     public bool IsDead = false;
     public int ScoreValue = 10;
 
-
     public void PlaySound()
     {
         if (DeathSound == null) return;
@@ -18,8 +17,8 @@ public class Entity : MonoBehaviour
         AudioSource audioSource = newAC.AddComponent<AudioSource>();
         audioSource.volume = DeathVolume;
         audioSource.PlayOneShot(DeathSound);
-        StartCoroutine(DestroyOverSeconds(DeathSound.length + 0.1f, newAC));
-        DontDestroyOnLoad(newAC);
+        // StartCoroutine(DestroyOverSeconds(DeathSound.length + 0.1f, newAC));
+        // DontDestroyOnLoad(newAC);
 
     }
 
