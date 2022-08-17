@@ -10,6 +10,6 @@ Simply reloads the main scene.
 {
     public void LoadGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Main");
     }
 }
