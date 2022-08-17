@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// moves enemy planes
 public class Mover : MonoBehaviour
+/*
+Moves enemy planes.
+*/
 {
     public float speed;
     private Rigidbody2D enemyPlane;

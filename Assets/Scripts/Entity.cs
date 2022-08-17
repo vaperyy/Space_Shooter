@@ -22,9 +22,4 @@ public class Entity : MonoBehaviour
 
     }
 
-    public IEnumerator DestroyOverSeconds(float time, GameObject go)
-    {
-        yield return new WaitForSeconds(time);
-        Destroy(go);
-    }
 }

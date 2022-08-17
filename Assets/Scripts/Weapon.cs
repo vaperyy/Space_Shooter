@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
+/*
+Instantiate enemy bullets from red enemy planes.
+*/
 {
     public EnemyProjectile EnemyProjectile;
     public Entity Parent;
@@ -30,11 +33,6 @@ public class Weapon : MonoBehaviour
         audioSource.PlayOneShot(FireSound);
         // StartCoroutine(DestroyOverSeconds(FireSound.length + 0.1f, newAC));
     }
-
-    // private void Update()
-    // {
-    //     _cooldown -= Time.deltaTime;
-    // }
 
     public IEnumerator DestroyOverSeconds(float time, GameObject go)
     {

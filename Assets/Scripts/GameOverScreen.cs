@@ -13,7 +13,6 @@ Loads the Game Over Screen.
 
     void Start() {
         currentScoreText = currentScore.GetComponent<Text>();  // get the score from the score GameObject
-        // gameObject.SetActive(true);
         currentScoreText.text = PlayerPrefs.GetString("currentScore");
     }
 }

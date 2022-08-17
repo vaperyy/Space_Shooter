@@ -7,13 +7,9 @@ public class PlayerController : Entity
     public float MovementSpeed = 1;
     public float HorizontalBorder = 4.0f;
     public float VerticalBorder = 4.0f;
-
     public static PlayerController main;
-
     public Vector3 moveAmount;
-
     public Weapon[] Weapons;
-
     private void Awake()
     {
         main = this;

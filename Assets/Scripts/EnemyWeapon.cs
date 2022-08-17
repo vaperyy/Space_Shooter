@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyWeapon : Weapon
+/*
+Instantiates bullets from Parent OwnedBy (red enemy planes).
+*/
 {
     public override void Fire()
     {

@@ -4,33 +4,24 @@ using UnityEngine.UI;
 using System.Collections;
 using TMPro;
 
-// controls player plane, such as moving and shooting
 public class Player : MonoBehaviour
 /*
+Controls player plane, such as moving and shooting
 https://www.youtube.com/watch?v=tFblCEFQoTs
-
 */
 {
-
     private float timer;
     private int score;
-
     public Text scoreText;
-
-    // public GameOverScreen GameOverScreen;
-    // int maxPlatform = 0;
     public Projectile laserPrefab;
     public float moveSpeed = 5.0f;
     public Rigidbody2D rb;  // adding a Rigidbody assigns physics properties to the sprite
     private Vector2 moveInput;
-
-
     public static Player main;
-
 
     private void Awake()
     {
-        main = this;
+        main = this;  // set main so that bullets know where to try to hit.
     }
 
     private void Start()
@@ -40,18 +31,11 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
 
     private void Update()
     {
-        moveInput.x = Input.GetAxisRaw("Horizontal");  // returns the value 
-        // of the virtual axis identified by the Horizontal axis.
-        moveInput.y = Input.GetAxisRaw("Vertical");  // GetAxis is more sensitive
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");  // GetAxis is more sensitive comparatively.
 
-        moveInput.Normalize();  // makes a vector have a magnitude of 1
-        // ensures uniform speed
-
-        rb.velocity = moveInput * moveSpeed;  // the player should travel like this
-        // v2 * moveSpeed = v3, rb.velocity is a vector3
-
-
-        // pick between shooting automatically or manually (below)
+        moveInput.Normalize();  // ensures uniform speed; makes a vector magnitude 1
+        rb.velocity = moveInput * moveSpeed;  // moveInput is V2 * moveSpeed which is V1 which makes a 3D Vector
 
         timer += Time.deltaTime;
         if(timer >= 0.07)
@@ -59,7 +43,7 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
             Shoot();
             timer = 0;
         }
-
+        // or to enable manual shooting...
         // if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         // {
         //     Shoot();
@@ -67,25 +51,21 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
     }
 
     void Shoot()
-    // for instantiating the (Projectile-attached) laser prefab
+    /* 
+    for instantiating the (Projectile-attached) laser prefab
+    */
     {
 
         // instantiate the projectile at the position and rotation of this transformation
         // this.transform.position locates the GameObject in 3d world space
         // Quaternion.identity represents no rotation needed, object is perfectly aligned with world axises
-
-        // Instantiate(this.laserPrefab, this.transform.position, Quaternion.identity);
-
         Projectile instance = Instantiate(this.laserPrefab, this.transform.position, Quaternion.identity);
-        // instance.scoreText = scoreText;
 
         score++;
         scoreText.text = "" + score;  // not just for the below code but also display in UI
-
     }
 
     void OnTriggerEnter2D(Collider2D other)
-
     /* 
     Just like in projectile except for the shooter and an enemy plane
 
@@ -98,7 +78,6 @@ https://www.youtube.com/watch?v=tFblCEFQoTs
         (this.gameObject.layer == LayerMask.NameToLayer("Shooter")))
         {
             PlayerPrefs.SetString("currentScore", scoreText.text);
-            // Debug.Log("Score: " + scoreText.text);  // This works
             SceneManager.LoadScene("Game Over");
         }
     }
