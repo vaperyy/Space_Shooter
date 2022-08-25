@@ -1,7 +1,7 @@
 # Space-Shooter
 space/retro shooter project. 
 
-Currently in development but playable if opened on Unity. 
+Finished first game ever on Unity. 
 
 Features:
  - Ability to shoot enemy planes with lasers
